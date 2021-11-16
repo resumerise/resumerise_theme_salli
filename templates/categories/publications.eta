@@ -1,41 +1,36 @@
 <section id="publications">
 	<% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
-		<h1>
+		<h1 class="section-title">
 		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
 		</h1>
 	<% } %>
 	<% it.resume?.publications.forEach(function(publication) { %>
-        <div class="item content">
+        <div class="entry">
             <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
                 value: publication.name,
-                showLabel: false,
-                id: 'publication-name',
+                classes: 'entry__title'
             }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
                 value: publication.publisher,
-                showLabel: false,
-                id: 'publication-publisher',
+                classes: 'entry__subtitle'
             }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
                 value: it.formatDate(publication.releaseDate, it.resume.settings),
-                showLabel: false,
-                id: 'publication-releaseDate',
+                classes: 'entry__date'
             }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 
                 value: publication.website,
-                showLabel: false,
-                id: 'publication-website',
+                classes: 'entry__url'
             }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
                 value: publication.summary,
-                showLabel: false,
-                id: 'publication-summary',
+                classes: 'entry__text'
             }) %>
         </div>
 	<% }) %>

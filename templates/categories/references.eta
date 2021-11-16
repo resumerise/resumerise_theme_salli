@@ -1,23 +1,21 @@
 <section id="references">
 	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
-		<h1>
+		<h1 class="section-title">
 			<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
 		</h1>
 	<% } %>
 	<% it.resume?.references.forEach(function(reference) { %>
-		<div class="item content">
+		<div class="entry">
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference, id: reference.id, showDelete: true}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
-				value: reference.reference,
-				showLabel: false,
-				id: 'reference-reference',
-			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
 				value: reference.name,
-				showLabel: false,
-				id: 'reference-name',
+				classes: 'entry__title'
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
+				value: reference.reference,
+				classes: 'entry__subtitle'
 			}) %>
 		</div>
 	<% }) %>

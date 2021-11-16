@@ -1,20 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 :root {
 	--layout-padding: 40px;
 }
 
 /* layout */
+
 body {
 	padding: var(--layout-padding);
 	background: #fff;
-	font: 15px Arial, Helvetica, sans-serif;
+	font-family: 'Poppins', sans-serif;
+	font-size: 0.9em;
 }
 
 @media print {
-    body  {
-        width: 21cm;
-        height: 29.7cm;
-        margin: 27mm 16mm 27mm 16mm;
-   } 
+	body {
+		width: 21cm;
+		height: 29.7cm;
+		margin: 27mm 16mm 27mm 16mm;
+	}
 }
 
 @media screen {
@@ -26,6 +29,7 @@ body {
 }
 
 /* common */
+
 .container {
 	text-align: left;
 }
@@ -47,8 +51,8 @@ blockquote {
 	margin-bottom: 1em;
 }
 
-.item {
-	margin-bottom: 1em;
+.entry {
+	margin-bottom: 3em;
 }
 
 .key-value-item {
@@ -59,8 +63,7 @@ blockquote {
 	margin-bottom: 5px;
 }
 
-.key-value-item label, 
-.key-list-item label {
+.key-value-item label, .key-list-item label {
 	white-space: nowrap;
 	color: gainsboro;
 	margin-right: 5px;
@@ -68,10 +71,6 @@ blockquote {
 
 .key-value-item span {
 	white-space: normal;
-}
-
-.content {
-	position: relative;
 }
 
 .icon {
@@ -91,4 +90,8 @@ blockquote {
 
 .picture img {
 	border-radius: 50%;
+}
+
+.entry__list {
+	margin-top: 1em;
 }
