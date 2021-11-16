@@ -4,44 +4,33 @@
     }) %>
     <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-        <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
+        <h1 class="section-title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
     <% } %>
     <div class="content">
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
-            value: it.resume.basics.name,
-            showLabel: false,
-            id: 'basics-name'
+            value: it.resume.basics.name
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
             value: it.resume.basics.website,
-            showLabel: false,
-            id: 'basics-website'
+            classes: 'entry__url'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
-            value: it.resume.basics.label,
-            showLabel: false,
-            id: 'basics-label'
+            value: it.resume.basics.label
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
-            value: it.resume.basics.email,
-            showLabel: false,
-            id: 'basics-email'
+            value: it.resume.basics.email
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
-            value: it.resume.basics.phone,
-            showLabel: false,
-            id: 'basics-phone'
+            value: it.resume.basics.phone
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
-            value: it.resume.basics.summary,
-            showLabel: false,
-            id: 'basics-summary'
+            value: it.resume.basics.summary
         }) %>
     </div>
 </section>

@@ -1,37 +1,33 @@
 <section id="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
-		<h1>
+		<h1 class="section-title">
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
 		</h1>
 	<% } %>
 	<% it.resume?.awards.forEach(function(award) { %>
-	<div class="item content">
-		<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
-			value: award.title,
-			showLabel: false,
-			id: 'award-title'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
-			value: it.formatDate(award.date, it.resume.settings),
-			showLabel: false,
-			id: 'award-date'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
-			value: award.awarder,
-			showLabel: false,
-			id: 'award-awarder'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
-			value: award.summary,
-			showLabel: false,
-			id: 'award-summary'
-		}) %>
-	</div>
+		<div class="entry">
+			<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
+				value: award.title,
+				classes: 'entry__title'
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
+				value: award.awarder,
+				classes: 'entry__subtitle'
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
+				value: it.formatDate(award.date, it.resume.settings),
+				classes: 'entry__date'
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
+				value: award.summary,
+				classes: 'entry__text'
+			}) %>
+		</div>
 	<% }) %>
 	<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>
 </section>

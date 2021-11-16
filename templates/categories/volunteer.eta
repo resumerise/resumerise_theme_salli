@@ -1,49 +1,44 @@
 <section id="volunteer">
 	<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>
-		<h1>
+		<h1 class="section-title">
 			<%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %>
 		</h1>
 	<% } %>
 	<% it.resume?.volunteer.forEach(function(volunteer) { %>
-		<div class="item content">
+		<div class="entry">
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
 				value: volunteer.organization,
-				showLabel: false,
-				id: 'volunteer-organization',
+				classes: 'entry__title'
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
+				value: volunteer.position,
+				classes: 'entry__subtitle'
 			}) %>
 			<%~ include('date-range', {
 				formatDate: it.formatDate,
 				startDate: volunteer.startDate,
 				endDate: volunteer.endDate,
 				present: volunteer.present,
-				showLabel: false,
-				settings: it.resume.settings
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
-				value: volunteer.position,
-				showLabel: false,
-				id: 'volunteer-position',
+				settings: it.resume.settings,
+				classes: 'entry__date'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
 				value: volunteer.website,
-				showLabel: false,
-				id: 'volunteer-website',
+				classes: 'entry__url'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.summary, 
 				value: volunteer.summary,
-				showLabel: false,
-				id: 'volunteer-summary',
+				classes: 'entry__text'
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights, 
 				data: volunteer.highlights,
-				showLabel: false,
-				id: 'volunteer-highlights',
+				classes: 'entry__list'
 			}) %>
 		</div>
 	<% }) %>
