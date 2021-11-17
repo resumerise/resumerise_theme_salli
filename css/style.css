@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-:root {
-	--layout-padding: 40px;
-}
 
-/* layout */
+:root {
+	--layout-padding: 5em;
+	--header-font-size: 1.5em;
+	--article-font-size: 1.2em;
+	--header-margin: 0.7em;
+}
 
 body {
 	padding: var(--layout-padding);
@@ -23,36 +25,46 @@ body {
 @media screen {
 	body {
 		line-height: 1.4;
-		margin: 50px 0;
-		margin-bottom: 100px;
+		margin: 3em 0;
+		margin-bottom: 5em;
 	}
 }
 
-/* common */
-
-.container {
-	text-align: left;
+.basics header {
+	display: none;
 }
 
-h1 {
-	font-size: 22px;
-}
-
-h2 {
-	font-size: 18px;
+section > header {
+	font-size: var(--header-font-size);
+	margin-bottom: var(--header-margin);
 }
 
 section {
 	margin-bottom: 2em;
 }
 
-blockquote {
-	margin: 0;
-	margin-bottom: 1em;
+article {
+	margin-bottom: 3em;
+	display: flex;
+	flex-direction: column;
 }
 
-.entry {
-	margin-bottom: 3em;
+.article-header {
+	margin-bottom: 0.7em;
+}
+
+.article-content {
+	display: grid;
+	flex-direction: column;
+	row-gap: 0.5em;
+}
+
+.article__title {
+	font-size: var(--article-font-size);
+}
+
+.article__subtitle {
+	font-weight: 500;
 }
 
 .key-value-item {
@@ -60,7 +72,6 @@ blockquote {
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: flex-start;
-	margin-bottom: 5px;
 }
 
 .key-value-item label, .key-list-item label {
@@ -71,13 +82,6 @@ blockquote {
 
 .key-value-item span {
 	white-space: normal;
-}
-
-.icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	stroke-width: 0;
 }
 
 .picture {
@@ -92,6 +96,32 @@ blockquote {
 	border-radius: 50%;
 }
 
-.entry__list {
-	margin-top: 1em;
+.profiles .article-container {
+	display: flex;
+	flex-direction: row;
+	column-gap: 2em;
+}
+
+.icon.twitter:before {
+	content: "\f099";
+}
+
+.icon.facebook:before {
+	content: "\f39e";
+}
+
+.icon.linkedin:before {
+	content: "\f0e1";
+}
+
+.icon {
+	font-size: 1.6em;
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
 }

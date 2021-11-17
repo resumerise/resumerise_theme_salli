@@ -1,26 +1,30 @@
-<section id="certifications">
+<section id="certifications" class="certifications">
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
-		<h1 class="section-title"><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h1>
+		<header><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
 	<% } %>
 	<% it.resume?.certifications.forEach(function(certificate) { %>
-	<div class="entry">
-		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
-			value: certificate.issuer,
-			classes: 'entry__title'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
-			value: certificate.title,
-			classes: 'entry__subtitle'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
-			value: it.formatDate(certificate.issueDate, it.resume.settings),
-			classes: 'entry__date'
-		}) %>
-	</div>
+		<div class="article-container">
+			<article>
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
+						value: certificate.issuer,
+						classes: 'article__title'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
+						value: certificate.title,
+						classes: 'article__subtitle'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
+						value: it.formatDate(certificate.issueDate, it.resume.settings),
+						classes: 'article__date'
+					}) %>
+				</div>
+			</article>
+		</div>
+		<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 	<% }) %>
-	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 </section>
