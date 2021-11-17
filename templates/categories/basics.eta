@@ -20,7 +20,7 @@
             label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
             value: it.resume.basics.label
         }) %>
-        <%~ include('key-value-item', {
+        <%~ include('key-mail-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
             value: it.resume.basics.email
         }) %>
