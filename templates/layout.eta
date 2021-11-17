@@ -11,45 +11,9 @@
 		</style>
 	</head>
 	<body>
-		<div class="main container">
+		<main>
 			<!-- BASICS -->
 			<%~ include("basic", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-
-			<!-- SKILLS -->
-			<%~ include("skills", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- AWARDS -->
-			<%~ include("awards", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- PROFILE -->
-			<%~ include("profile", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- INTEREST -->
-			<%~ include("interest", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- LANGUAGE -->
-			<%~ include("language", {
-				resume: it.resume,
-				formatDate: it.formatDate
-			}) %>
-			
-			<!-- WORK -->
-			<%~ include("work", {
 				resume: it.resume,
 				formatDate: it.formatDate
 			}) %>
@@ -59,7 +23,13 @@
 				resume: it.resume,
 				formatDate: it.formatDate
 			}) %>
-			
+
+			<!-- WORK -->
+			<%~ include("work", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+
 			<!-- EDUCATION -->
 			<%~ include("education", {
 				resume: it.resume,
@@ -89,6 +59,36 @@
 				resume: it.resume,
 				formatDate: it.formatDate
 			}) %>
-		</div>
+
+			<!-- SKILLS -->
+			<%~ include("skills", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- AWARDS -->
+			<%~ include("awards", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- INTEREST -->
+			<%~ include("interest", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+
+			<!-- LANGUAGE -->
+			<%~ include("language", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+
+			<!-- PROFILE -->
+			<%~ include("profile", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+		</main>
 	</body>
 </html>

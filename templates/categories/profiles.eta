@@ -1,22 +1,17 @@
-<section id="profiles">
+<section id="profiles" class="profiles">
     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-        <h1 class="section-title">
+        <header>
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
-        </h1>
+        </header>
     <% } %>
-    <% it.resume.basics.profiles?.forEach(function(profile){ %>
-        <div class='item content'>
+    <div class="article-container">
+        <% it.resume.basics.profiles?.forEach(function(profile){ %>
             <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.profile?.network, 
-                value: profile.network,
-                classes: 'entry__title'
+            <%~ include('profile-item', {
+                label: profile.network,
+                url: profile.url
             }) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.profile?.url, 
-                value: profile.url
-            }) %>
-        </div>
-    <% }) %>
-    <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
+        <% }) %>
+        <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
+    </div>
 </section>

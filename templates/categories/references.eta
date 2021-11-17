@@ -1,23 +1,29 @@
-<section id="references">
+<section id="references" class="references">
 	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
-		<h1 class="section-title">
+		<header>
 			<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
-		</h1>
+		</header>
 	<% } %>
-	<% it.resume?.references.forEach(function(reference) { %>
-		<div class="entry">
-			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference, id: reference.id, showDelete: true}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
-				value: reference.name,
-				classes: 'entry__title'
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
-				value: reference.reference,
-				classes: 'entry__subtitle'
-			}) %>
-		</div>
-	<% }) %>
-	<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference}) %>
+	<div class="article-container">
+		<% it.resume?.references.forEach(function(reference) { %>
+			<article>
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference, id: reference.id, showDelete: true}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
+						value: reference.name,
+						classes: 'article__title'
+					}) %>
+				</div>
+				<div class="article-content">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
+						value: reference.reference,
+						classes: 'article__subtitle'
+					}) %>
+				</div>
+			</article>
+		<% }) %>
+		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference}) %>
+	</div>
 </section>
