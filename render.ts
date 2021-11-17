@@ -9,6 +9,7 @@ import {
   getWidgetKeyValuePairFilePath,
   getWidgetListFilePath,
   getWidgetKeyUrlPairFilePath,
+  getWidgetKeyMailPairFilePath,
   getProfileItem
 } from "resumerise_library/mod.ts";
 import { Resume } from "resumerise_library/codegen/model/resume.ts";
@@ -190,6 +191,14 @@ export const render = async (
       keyValueTemplateName,
       eta.compile(
         await getWidgetKeyValuePairFilePath(),
+      ),
+    );
+
+    const keyMailTemplateName = "key-mail-item";
+    eta.templates.define(
+      keyMailTemplateName,
+      eta.compile(
+        await getWidgetKeyMailPairFilePath(),
       ),
     );
 
