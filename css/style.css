@@ -40,13 +40,15 @@ section > header {
 }
 
 section {
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 
 article {
-	margin-bottom: 3em;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	position: relative;
+	margin-bottom: 3em;
 }
 
 .article-header {
@@ -57,6 +59,22 @@ article {
 	display: grid;
 	flex-direction: column;
 	row-gap: 0.5em;
+}
+
+.article__url,
+.article__mail,
+.article__phone {
+	display: flex;
+	flex-direction: row;
+	column-gap: 1em;
+	justify-content: start;
+    align-items: center;
+    align-content: center;
+}
+
+.item__icon {
+	margin-right: 0;
+	width: 0.6em;
 }
 
 .article__title {
@@ -70,14 +88,12 @@ article {
 .key-value-item {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
 	justify-content: flex-start;
 }
 
 .key-value-item label, .key-list-item label {
 	white-space: nowrap;
 	color: gainsboro;
-	margin-right: 5px;
 }
 
 .key-value-item span {
@@ -102,26 +118,30 @@ article {
 	column-gap: 2em;
 }
 
-.icon.twitter:before {
-	content: "\f099";
+.INTERACTIVE .nav-add {
+	margin-top: 1em;
+	margin-bottom: 2em;
 }
 
-.icon.facebook:before {
-	content: "\f39e";
+.INTERACTIVE .profiles article {
+	padding: 2em 0;
 }
 
-.icon.linkedin:before {
-	content: "\f0e1";
+.INTERACTIVE .profiles .article-container {
+	display: flex;
+	flex-direction: column;
 }
 
-.icon {
-	font-size: 1.6em;
-	font-family: "Font Awesome 5 Brands";
-	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
+html:not(.INTERACTIVE) .profiles .article-container {
+	display: flex;
+	flex-direction: row;
+	column-gap: 0.2em;
+	width: 25em;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: center;
+}
+
+html:not(.INTERACTIVE) .profiles article .profile-item {
+	display: inline-block;
 }
