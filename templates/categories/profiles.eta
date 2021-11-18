@@ -6,11 +6,13 @@
     <% } %>
     <div class="article-container">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
-            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
-            <%~ include('profile-item', {
-                label: profile.network,
-                url: profile.url
-            }) %>
+            <article>
+                <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
+                <%~ include('profile-item', {
+                    label: profile.network,
+                    url: profile.url
+                }) %>
+            </article>
         <% }) %>
         <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
     </div>

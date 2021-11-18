@@ -18,7 +18,8 @@
 				<div class="article-content">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
-						value: language.fluency
+						value: language.fluency,
+						classes: 'article__text'
 					}) %>
 				</div>
 			</article>

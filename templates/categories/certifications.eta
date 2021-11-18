@@ -2,10 +2,10 @@
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
 		<header><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
 	<% } %>
-	<% it.resume?.certifications.forEach(function(certificate) { %>
-		<div class="article-container">
+	<div class="article-container">
+		<% it.resume?.certifications.forEach(function(certificate) { %>
 			<article>
-				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.certificate, showDelete: true, id: certificate.id}) %>
 				<div class="article-header">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
@@ -24,7 +24,7 @@
 					}) %>
 				</div>
 			</article>
-		</div>
-		<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
-	<% }) %>
+		<% }) %>
+	</div>
+	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.certificate}) %>
 </section>
