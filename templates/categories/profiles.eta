@@ -10,7 +10,8 @@
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
                 <%~ include('profile-item', {
                     label: profile.network,
-                    url: profile.url
+                    url: profile.url,
+                    classes: 'fab'
                 }) %>
             </article>
         <% }) %>
