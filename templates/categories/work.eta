@@ -1,8 +1,8 @@
 <section id="work" class="work">
     <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
-        <header><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></header>
+        <header class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></header>
     <% } %>
-    <div class="article-container">
+    <div class="article-container grid">
         <% it.resume?.work.forEach(function(work) { %>
             <article>
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
@@ -31,7 +31,7 @@
                         classes: 'article__date'
                     }) %>
                 </div>
-                <div class="article-content">
+                <div class="article-content s-grid">
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.work?.summary, 
                         value: work.summary,
