@@ -1,10 +1,10 @@
 <section id="awards" class="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
-		<header>
+		<header class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
 		</header>
 	<% } %>
-	<div class="article-container">
+	<div class="article-container grid">
 		<% it.resume?.awards.forEach(function(award) { %>
 			<article>
 				<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
@@ -25,7 +25,7 @@
 						classes: 'article__date'
 					}) %>
 				</div>
-				<div class="article-content">
+				<div class="article-content s-grid">
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
 					value: award.summary,

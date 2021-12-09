@@ -1,8 +1,8 @@
 <section id="certifications" class="certifications">
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
-		<header><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
+		<header class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
 	<% } %>
-	<div class="article-container">
+	<div class="article-container grid">
 		<% it.resume?.certifications.forEach(function(certificate) { %>
 			<article>
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.certificate, showDelete: true, id: certificate.id}) %>
