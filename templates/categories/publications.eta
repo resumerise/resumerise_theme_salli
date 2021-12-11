@@ -1,8 +1,6 @@
-<section id="publications" class="publications">
+<section class="publications section" id="publications">
 	<% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
-		<header class="section__title">
-		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
-		</header>
+		<header class="section__title"><%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %></header>
 	<% } %>
     <div class="article-container grid">
         <% it.resume?.publications.forEach(function(publication) { %>
@@ -14,27 +12,29 @@
                         value: publication.name,
                         classes: 'article__title'
                     }) %>
-                    <%~ include('key-value-item', {
-                        label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
-                        value: publication.publisher,
-                        classes: 'article__subtitle'
-                    }) %>
-                    <%~ include('key-value-item', {
-                        label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
-                        value: it.formatDate(publication.releaseDate, it.resume.settings),
-                        classes: 'article__date'
-                    }) %>
+                    <div class="article__wrapper">
+                        <%~ include('key-value-item', {
+                            label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
+                            value: publication.publisher,
+                            classes: 'article__subtitle'
+                        }) %>
+                        <%~ include('key-value-item', {
+                            label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
+                            value: it.formatDate(publication.releaseDate, it.resume.settings),
+                            classes: 'article__date'
+                        }) %>
+                    </div>
                     <%~ include('key-url-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 
                         value: publication.website,
                         classes: 'article__url'
                     }) %>
                 </div>
-                <div class="article-content s-grid">
+                <div class="article-content">
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
                         value: publication.summary,
-                        classes: 'article__text'
+                        classes: 'article__description'
                     }) %>
                 </div>
             </article>
