@@ -1,35 +1,19 @@
+/*========== GOOGLE FONT ==========*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
-
-/*===== VARIABLES CSS =====*/
+/*========== VARIABLES CSS ==========*/
 :root {
 	--header-height: 3rem;
 
 	/*========== COLORS ==========*/
-	/* --first-color: hsl(337, 62%, 58%); */
-	--first-color: hsl(337, 100%, 65%);
-	--first-color-second: hsl(337, 69%, 61%);
-	--first-color-alt: hsl(337, 57%, 53%);
-	--first-color-lighter: hsl(337, 69%, 61%);
-	--first-color-lighter-dark: hsl(337, 8%, 15%);
-	--title-color: hsl(20, 8%, 15%);
-	--text-color: #7c706a;
-	--text-color-light: #ada39f;
-	--body-color: #fefcfb;
+	--title-color: #111816;
+	--text-color: #888b85;
+	--body-color: white;
 	--white-color: white;
 	--black-color: black;
 
 	/*========== FONT & TYPORGRAPHY ==========*/
-	/* --body-font: 'Poppins', sans-serif; */
-	/* --body-font: 'Roboto Mono', monospace; */
-	/* --body-font: 'Gideon Roman', cursive; */
-	/* --body-font: 'Lora', serif; */
-	--title-font: 'Poppins', sans-serif;
-	--body-font: 'PT Serif', serif;
+	--body-font: 'Poppins', sans-serif;
 	--biggest-font-size: 4rem;
 	--bigger-font-size: 3rem;
 	--big-font-size: 2rem;
@@ -47,14 +31,14 @@
 	--font-800: 800;
 
 	/*========== MARGINS ==========*/
-	--mb-0-25: 0.25rem;
-	--mb-0-5: 0.5rem;
-	--mb-0-75: 0.75rem;
-	--mb-1: 1rem;
-	--mb-1-5: 1.5rem;
-	--mb-2: 2rem;
-	--mb-2-5: 2.5rem;
-	--mb-3: 3rem;
+	--mb-0-25: 0.25em;
+	--mb-0-5: 0.5em;
+	--mb-0-75: 0.75em;
+	--mb-1: 1em;
+	--mb-1-5: 1.5em;
+	--mb-2: 2em;
+	--mb-2-5: 2.5em;
+	--mb-3: 3em;
 
 	/*========== Z INDEX ==========*/
 	--z-tooltip: 10;
@@ -97,7 +81,6 @@ body {
 	font-size: var(--normal-font-size);
 	color: var(--black-color);
 	font-family: var(--body-font);
-	counter-reset: count;
 }
 
 h1, h2, h3, ul, p {
@@ -142,29 +125,30 @@ img {
 .section__title {
 	position: relative;
 	font-size: var(--h1-font-size);
-	font-family: var(--title-font);
 	color: var(--title-color);
 	font-weight: var(--font-600);
 	text-align: center;
-	margin-bottom: var(--mb-1-5);
+	margin-bottom: var(--mb-1);
 	width: fit-content;
-	counter-increment: count;
 }
 
 .section__title::before {
-	content: counter(count)'. ';
-}
-
-.section__title:after {
 	content: '';
 	position: absolute;
-	width: 100%;
-	height: 1px;
-	border-radius: 1rem;
-	bottom: -.5rem;
-	left: 0;
-	background-color: var(--first-color-alt);
+	width: -webkit-fill-available;
+	height: 24px;
+	background: red;
+	z-index: -1;
+	top: 15px;
+	left: 10.8px;
+	opacity: .5;
+	border-radius: .1rem;
+	-webkit-border-radius: .1rem;
+	-moz-border-radius: .1rem;
+	-ms-border-radius: .1rem;
+	-o-border-radius: .1rem;
 }
+
 
 /*========== LAYOUT ==========*/
 .main {
@@ -207,7 +191,6 @@ article {
 .article__subtitle {
 	font-size: var(--h3-font-size);
 	font-weight: var(--font-500);
-	color: #ADACA7 !important;
 }
 
 .article__description {
@@ -217,7 +200,6 @@ article {
 
 .article__date {
 	font-style: oblique;
-	color: #ADACA7 !important;
 }
 
 .article__text {
@@ -249,11 +231,11 @@ article {
 .home__title {
 	font-size: var(--h2-font-size);
 	color: var(--black-color);
-	font-weight: var(--font-600);
+	font-weight: var(--font-700);
 }
 
 .home__subtitle {
-	font-weight: var(--font-500);
+	font-weight: var(--font-600);
 	margin-bottom: var(--mb-0-5);
 }
 
@@ -266,9 +248,10 @@ article {
 .home__url a {
 	color: var(--first-color);
 }
+
 .home__url,
 .home__mail,
-.home__phone{
+.home__phone {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -281,9 +264,51 @@ article {
 .home__description {
 	text-align: center;
 }
+
 .home__title,
-.home__subtitle{
+.home__subtitle {
 	font-family: var(--title-font);
+}
+
+/*========== SECTION TITLE COLORS ==========*/
+.publications .section__title::before {
+	background-color: #0066ff;
+}
+
+.certifications .section__title::before {
+	background-color: #33ff00;
+}
+
+.project .section__title::before {
+	background-color: #ff6600;
+}
+
+.skills .section__title::before {
+	background-color: #c8ff00;
+}
+
+.volunteer .section__title::before {
+	background-color: #0051ff;
+}
+
+.languages .section__title::before {
+	background-color: #09ff00;
+}
+
+.education .section__title::before {
+	background-color: #ff00bf;
+}
+
+.interests .section__title::before {
+	background-color: #5900ff;
+}
+
+.references .section__title::before {
+	background-color: #00ffd5;
+}
+
+.profiles .section__title::before {
+	background-color: #363636;
 }
 
 /*========== REFERENCE SECTION ==========*/
@@ -294,12 +319,12 @@ article {
 /*========== PROFILE SECTION ==========*/
 .profile__container {
 	display: inline-grid;
-    gap: var(--mb-2);
-    grid-template-columns: repeat(5, 1fr);
+	gap: var(--mb-2);
+	grid-template-columns: repeat(5, 1fr);
 }
 
 .fab {
-	font-size: var(--mb-1-5);
+	font-size: var(--mb-2);
 }
 
 .fab a {
@@ -323,6 +348,14 @@ article {
 		margin: auto;
 	}
 
+	.section__title::before {
+		height: 30px;
+		background: red;
+		z-index: -1;
+		top: 24px;
+		left: 12.8px;
+	}
+
 	.main-wrapper,
 	.basics {
 		display: grid;
@@ -331,7 +364,6 @@ article {
 	}
 
 	.article__wrapper {
-		color: #ADACA7;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -343,11 +375,13 @@ article {
 	.home__description {
 		text-align: initial;
 	}
+
 	.home__url,
 	.home__mail,
-	.home__phone{
+	.home__phone {
 		justify-content: initial;
 	}
+
 	.profile__img {
 		order: 1;
 		height: 300px;
@@ -359,7 +393,7 @@ article {
 		-moz-border-radius: .1rem;
 		-ms-border-radius: .1rem;
 		-o-border-radius: .1rem;
-}
+	}
 
 	.home__title {
 		font-size: var(--h1-font-size);
@@ -367,6 +401,16 @@ article {
 
 	.home__subtitle {
 		font-size: var(--h2-font-size);
+	}
+}
+
+@media print {
+	.section__title::before {
+		height: 23px;
+		background: red;
+		z-index: -1;
+		top: 16px;
+		left: 7.8px;
 	}
 }
 

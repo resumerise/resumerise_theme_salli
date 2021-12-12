@@ -20,6 +20,12 @@
 			
 			<div class="main-wrapper">
 				<div class="left">
+					<!-- WORK -->	
+					<%~ include("work", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+
 					<!-- PROJECT -->
 					<%~ include("project", {
 						resume: it.resume,
@@ -31,21 +37,15 @@
 						resume: it.resume,
 						formatDate: it.formatDate
 					}) %>
-
-					<!-- WORK -->	
-					<%~ include("work", {
+					
+					<!-- REFERENCE -->
+					<%~ include("reference", {
 						resume: it.resume,
 						formatDate: it.formatDate
 					}) %>
-
+					
 					<!-- PROFILE -->
 					<%~ include("profile", {
-						resume: it.resume,
-						formatDate: it.formatDate
-					}) %>
-
-					<!-- LANGUAGE -->
-					<%~ include("language", {
 						resume: it.resume,
 						formatDate: it.formatDate
 					}) %>
@@ -75,6 +75,12 @@
 						resume: it.resume,
 						formatDate: it.formatDate
 					}) %>
+
+					<!-- LANGUAGE -->
+					<%~ include("language", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
 					
 					<!-- INTEREST -->
 					<%~ include("interest", {
@@ -88,11 +94,6 @@
 						formatDate: it.formatDate
 					}) %>
 
-					<!-- REFERENCE -->
-					<%~ include("reference", {
-						resume: it.resume,
-						formatDate: it.formatDate
-					}) %>
 				</div>
 			</div>
 		</main>

@@ -7,16 +7,11 @@
 			<article>
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.certificate, showDelete: true, id: certificate.id}) %>
 				<div class="article-header">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
-						value: certificate.issuer,
-						classes: 'article__title'
-					}) %>
 					<div class="article__wrapper">
 						<%~ include('key-value-item', {
-							label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
-							value: certificate.title,
-							classes: 'article__subtitle'
+							label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
+							value: certificate.issuer,
+							classes: 'article__title'
 						}) %>
 						<%~ include('key-value-item', {
 							label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
@@ -24,6 +19,11 @@
 							classes: 'article__date'
 						}) %>
 					</div>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
+						value: certificate.title,
+						classes: 'article__subtitle'
+					}) %>
 				</div>
 			</article>
 		<% }) %>

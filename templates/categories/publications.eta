@@ -7,16 +7,11 @@
             <article>
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
                 <div class="article-header">
-                    <%~ include('key-value-item', {
-                        label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
-                        value: publication.name,
-                        classes: 'article__title'
-                    }) %>
                     <div class="article__wrapper">
                         <%~ include('key-value-item', {
-                            label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
-                            value: publication.publisher,
-                            classes: 'article__subtitle'
+                            label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
+                            value: publication.name,
+                            classes: 'article__title'
                         }) %>
                         <%~ include('key-value-item', {
                             label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
@@ -24,6 +19,11 @@
                             classes: 'article__date'
                         }) %>
                     </div>
+                    <%~ include('key-value-item', {
+                        label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
+                        value: publication.publisher,
+                        classes: 'article__subtitle'
+                    }) %>
                     <%~ include('key-url-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 
                         value: publication.website,
