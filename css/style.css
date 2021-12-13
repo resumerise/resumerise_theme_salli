@@ -90,13 +90,13 @@ body {
 body::before {
 	content: '';
 	position: absolute;
-	background-color: #ffffff;
-	opacity: .15;
-	background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #ffffff 14px), repeating-linear-gradient(#000dff55, #000dff);
+	background-color: var(--white-color);
+	opacity: .3;
+	background-image: radial-gradient(#444cf7 2px, transparent 2px), radial-gradient(#444cf7 2px, var(--white-color) 2px);
+	background-size: 80px 80px;
+	background-position: 0 0, 40px 40px;
 	inset: 0;
 	z-index: -11;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 h1, h2, h3, ul, p {
@@ -152,7 +152,7 @@ img {
 	content: '';
 	position: absolute;
 	width: -webkit-fill-available;
-	height: 24px;
+	height: 25px;
 	background: red;
 	z-index: -1;
 	top: 20px;
@@ -369,7 +369,6 @@ article {
 	}
 
 	.section__title::before {
-		height: 30px;
 		background: red;
 		z-index: -1;
 		top: 24px;
@@ -426,7 +425,7 @@ article {
 
 @media print {
 	.section__title::before {
-		height: 23px;
+		height: 17px;
 		background: red;
 		z-index: -1;
 		top: 16px;
