@@ -1,5 +1,6 @@
 /*========== GOOGLE FONT ==========*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /*========== VARIABLES CSS ==========*/
 :root {
@@ -13,7 +14,8 @@
 	--black-color: black;
 
 	/*========== FONT & TYPORGRAPHY ==========*/
-	--body-font: 'Poppins', sans-serif;
+	/* --body-font: 'Poppins', sans-serif; */
+	--body-font: 'Montserrat', sans-serif;
 	--biggest-font-size: 4rem;
 	--bigger-font-size: 3rem;
 	--big-font-size: 2rem;
@@ -76,11 +78,25 @@ html {
 }
 
 body {
+	position: relative;
 	margin: 0 0 var(--header-height) 0;
 	background-color: var(--body-color);
 	font-size: var(--normal-font-size);
 	color: var(--black-color);
 	font-family: var(--body-font);
+	line-height: 1.5;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	background-color: #ffffff;
+	opacity: .15;
+	background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #ffffff 14px), repeating-linear-gradient(#000dff55, #000dff);
+	inset: 0;
+	z-index: -11;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 h1, h2, h3, ul, p {
@@ -139,8 +155,8 @@ img {
 	height: 24px;
 	background: red;
 	z-index: -1;
-	top: 15px;
-	left: 10.8px;
+	top: 20px;
+	left: 11px;
 	opacity: .4;
 	border-radius: .1rem;
 	-webkit-border-radius: .1rem;
@@ -221,11 +237,11 @@ article {
 	margin: auto;
 	display: block;
 	margin-bottom: var(--mb-1);
-	border-radius: .1rem;
-	-webkit-border-radius: .1rem;
-	-moz-border-radius: .1rem;
-	-ms-border-radius: .1rem;
-	-o-border-radius: .1rem;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
 }
 
 .home__title {
@@ -344,6 +360,10 @@ article {
 }
 
 @media print, screen and (min-width: 786px) {
+	body {
+		margin: 0;
+	}
+
 	.main {
 		margin: auto;
 	}
