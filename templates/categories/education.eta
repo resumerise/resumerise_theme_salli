@@ -1,34 +1,34 @@
-<section id="education" class="certifications">
+<section class="education section" id="education">
 	<% if(it.resume.settings?.labels?.categoryProperty?.education?.categoryTitle) { %>
-		<header class="section__title">
-			<%= it.resume.settings.labels.categoryProperty.education.categoryTitle %>
-		</header>
+		<header class="section__title"><%= it.resume.settings.labels.categoryProperty.education.categoryTitle %></header>
 	<% } %>
 	<div class="article-container grid">
 		<% it.resume?.education.forEach(function(education) { %>
 			<article>
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.education, showDelete: true, id: education.id}) %>
 				<div class="article-header">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
-						value: education.institution,
-						classes: 'article__title'
-					}) %>
+					<div class="article__wrapper">
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
+							value: education.institution,
+							classes: 'article__title'
+						}) %>
+						<%~ include('date-range', {
+							formatDate: it.formatDate, 
+							startDate: education.startDate,
+							endDate: education.endDate,
+							present: education.present,
+							settings: it.resume.settings,
+							classes: 'article__date'
+						}) %>
+					</div>
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
 						value: education.area,
 						classes: 'article__subtitle'
 					}) %>
-					<%~ include('date-range', {
-						formatDate: it.formatDate, 
-						startDate: education.startDate,
-						endDate: education.endDate,
-						present: education.present,
-						settings: it.resume.settings,
-						classes: 'article__date'
-					}) %>
 				</div>
-				<div class="article-content s-grid">
+				<div class="article-content">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
 						value: education.studyType,

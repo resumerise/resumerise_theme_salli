@@ -1,31 +1,31 @@
-<section id="volunteer" class="volunteer">
+<section class="volunteer section" id="volunteer">
 	<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>
-		<header class="section__title">
-			<%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %>
-		</header>
+		<header class="section__title"><%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %></header>
 	<% } %>
 	<div class="article-container grid">
 		<% it.resume?.volunteer.forEach(function(volunteer) { %>
 			<article>
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
 				<div class="article-header">
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
-						value: volunteer.organization,
-						classes: 'article__title'
-					}) %>
+					<div class="article__wrapper">
+						<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
+							value: volunteer.organization,
+							classes: 'article__title'
+						}) %>
+						<%~ include('date-range', {
+							formatDate: it.formatDate,
+							startDate: volunteer.startDate,
+							endDate: volunteer.endDate,
+							present: volunteer.present,
+							settings: it.resume.settings,
+							classes: 'article__date'
+						}) %>
+					</div>
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
 						value: volunteer.position,
 						classes: 'article__subtitle'
-					}) %>
-					<%~ include('date-range', {
-						formatDate: it.formatDate,
-						startDate: volunteer.startDate,
-						endDate: volunteer.endDate,
-						present: volunteer.present,
-						settings: it.resume.settings,
-						classes: 'article__date'
 					}) %>
 					<%~ include('key-url-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
@@ -33,11 +33,11 @@
 						classes: 'article__url'
 					}) %>
 				</div>
-				<div class="article-content s-grid">
+				<div class="article-content">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.summary, 
 						value: volunteer.summary,
-						classes: 'article__text'
+						classes: 'article__description'
 					}) %>
 					<%~ include('list', {
 						label: it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights, 
