@@ -14,7 +14,6 @@
 							classes: 'article__title'
 						}) %>
 						<%~ include('date-range', {
-							formatDate: it.formatDate,
 							startDate: project.startDate,
 							endDate: project.endDate,
 							present: project.present,
